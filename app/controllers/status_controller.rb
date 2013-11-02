@@ -1,32 +1,9 @@
 class StatusController < UIViewController
 
-  # def viewDidLoad
-  #   #super
-  #   self.title = "Balanced Status"
-
-  #   self.stylesheet = :status
-  #   self.view.stylename = :root
-
-  #   subview(UITextField.alloc.initWithFrame(CGRectZero), :status_api)
-  #   #subview(UILabel.alloc.initWithFrame(CGRectZero), :status_api_label)
-
-  #   subview(UITextField.alloc.initWithFrame(CGRectZero), :status_js)
-  #   subview(UITextField.alloc.initWithFrame(CGRectZero), :status_dashboard)
-
-  #   @label = UILabel.alloc.initWithFrame(CGRectZero)
-  #   @label.text = "Dashboard"
-  #   @label.textColor = UIColor.blackColor
-  #   @label.backgroundColor = UIColor.clearColor
-  #   @label.sizeToFit
-  #   @label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2]
-
-  #   self.view.addSubview(@label)
-  # end
-
   def viewDidLoad
     super
 
-    self.title = "Dashboard"
+    self.title = "Balanced Payments Dashboard"
 
     self.view.backgroundColor = UIColor.whiteColor
 
@@ -103,9 +80,7 @@ class StatusController < UIViewController
       @refresh.enabled = false
 
       StatusResponse.refresh do |response|
-        puts "UP class: #{"UP".class}"
         puts "api status: #{response.api_status}"
-        puts "api_status class: #{response.api_status.class}"
         puts "js status: #{response.js_status}"
         puts "dash status: #{response.dashboard_status}"
         puts "time: #{response.time}"
