@@ -7,13 +7,23 @@ class StatusController < UIViewController
 
     self.view.backgroundColor = UIColor.whiteColor
 
+    @page_label = UILabel.alloc.initWithFrame(CGRectZero)
+    @page_label.text = "Balanced Payments Dashboard"
+    @page_label.textColor = UIColor.blackColor
+    @page_label.backgroundColor = UIColor.clearColor
+    @page_label.textAlignment = UITextAlignmentCenter
+    @page_label.sizeToFit
+    @page_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 230]
+
+    self.view.addSubview(@page_label)
+
     @api_status_label = UILabel.alloc.initWithFrame(CGRectZero)
     @api_status_label.text = "API Status"
     @api_status_label.textColor = UIColor.blackColor
     @api_status_label.backgroundColor = UIColor.clearColor
     @api_status_label.textAlignment = UITextAlignmentCenter
     @api_status_label.sizeToFit
-    @api_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 230]
+    @api_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 130]
 
     self.view.addSubview(@api_status_label)
 
@@ -23,7 +33,7 @@ class StatusController < UIViewController
     @api_status.backgroundColor = UIColor.clearColor
     @api_status.textAlignment = UITextAlignmentCenter
     @api_status.sizeToFit
-    @api_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 200]
+    @api_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 100]
 
     self.view.addSubview(@api_status)
 
@@ -33,7 +43,7 @@ class StatusController < UIViewController
     @js_status_label.backgroundColor = UIColor.clearColor
     @js_status_label.textAlignment = UITextAlignmentCenter
     @js_status_label.sizeToFit
-    @js_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 130]
+    @js_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 60]
 
     self.view.addSubview(@js_status_label)
 
@@ -43,7 +53,7 @@ class StatusController < UIViewController
     @js_status.backgroundColor = UIColor.clearColor
     @js_status.textAlignment = UITextAlignmentCenter
     @js_status.sizeToFit
-    @js_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 100]
+    @js_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 30]
 
     self.view.addSubview(@js_status)
 
@@ -53,7 +63,7 @@ class StatusController < UIViewController
     @dashboard_status_label.backgroundColor = UIColor.clearColor
     @dashboard_status_label.textAlignment = UITextAlignmentCenter
     @dashboard_status_label.sizeToFit
-    @dashboard_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 30]
+    @dashboard_status_label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 + 10]
 
     self.view.addSubview(@dashboard_status_label)
 
@@ -63,7 +73,7 @@ class StatusController < UIViewController
     @dashboard_status.backgroundColor = UIColor.clearColor
     @dashboard_status.textAlignment = UITextAlignmentCenter
     @dashboard_status.sizeToFit
-    @dashboard_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2]
+    @dashboard_status.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 + 40]
 
     self.view.addSubview(@dashboard_status)
 
