@@ -13,12 +13,7 @@ class StatusResponse
 		}
 	end
 
-	def self.refresh
-		# response = StatusResponse.get_response
-		StatusResponse.parse_response(@html)
-	end
-
-	def self.get_response(&block)
+	def self.refresh(&block)
 		BubbleWrap::HTTP.get("http://status.balancedpayments.com") do |response|
       html = response.body.to_str
 
@@ -37,18 +32,6 @@ class StatusResponse
       block.call(response_object)
       
     end
-	end
-
-	def self.parse_response(response)
-		parser = Hpple.HTML(response)
-		elements = parser.xpath("//ul").first
-		api_response = elements.xpath("//li.API/div.uptime-image").to_s
-		js_response = elements.xpath("//li.JS/div.uptime-image").to_s
-		dashboard_response = elements.xpath("//li.DASH/div.uptime-image").to_s
-
-		puts "api_response: #{api_response}"
-		puts "js_response: #{js_response}"
-		puts "dashboard_response: #{dashboard_response}"
 	end
 
 end

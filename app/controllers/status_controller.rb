@@ -102,7 +102,7 @@ class StatusController < UIViewController
     @refresh.when(UIControlEventTouchUpInside) do
       @refresh.enabled = false
 
-      StatusResponse.get_response do |response|
+      StatusResponse.refresh do |response|
         puts "UP class: #{"UP".class}"
         puts "api status: #{response.api_status}"
         puts "api_status class: #{response.api_status.class}"
