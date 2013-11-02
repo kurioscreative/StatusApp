@@ -29,6 +29,7 @@ class StatusResponse
 				dashboard_status: dashboard_response, 
 				time: "#{Time.now.to_s}"
 			})
+      
       block.call(response_object)
       
     end
